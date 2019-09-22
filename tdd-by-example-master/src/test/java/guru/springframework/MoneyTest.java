@@ -1,6 +1,7 @@
 package guru.springframework;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 import org.junit.jupiter.api.Test;
 
@@ -17,6 +18,8 @@ public class MoneyTest {
 	@Test
 	void testEqualityDollar() {
 		assertEquals(new Dollar(15), new Dollar(15));
+		assertNotEquals(new Dollar(5), new Dollar(8));
+		assertNotEquals(new Dollar(5), new Franc(5));
 		
 	}
 	
