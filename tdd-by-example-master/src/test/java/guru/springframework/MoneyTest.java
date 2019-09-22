@@ -6,13 +6,32 @@ import org.junit.jupiter.api.Test;
 
 public class MoneyTest {
 	@Test
-	void testMultiplication() {
+	void testMultiplicationDollar() {
 		Dollar five = new Dollar(5);
-	//*	Dollar product = five.times(2);
-		five.times(2);
-		assertEquals(10,five.amount);
-	/*	product = five.times(3);
-		assertEquals(15,product.amount);*/
+		Dollar product = five.times(2);
+		assertEquals(new Dollar(10),product);
+		product = five.times(3);
+		assertEquals(new Dollar(15),product);
 	}
 	
+	@Test
+	void testEqualityDollar() {
+		assertEquals(new Dollar(15), new Dollar(15));
+		
+	}
+	
+	@Test
+	void testMultiplicationFranc() {
+		Franc five = new Franc(5);
+		Franc product = five.times(2);
+		assertEquals(new Franc(10),product);
+		product = five.times(3);
+		assertEquals(new Franc(15),product);
+	}
+	
+	@Test
+	void testEqualityFranc() {
+		assertEquals(new Franc(15), new Franc(15));
+		
+	}
 }
